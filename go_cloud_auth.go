@@ -26,7 +26,8 @@ func NewGoCloudAuthStack(scope constructs.Construct, id string, props *GoCloudAu
 			Name: jsii.String("username"),
 			Type: awsdynamodb.AttributeType_STRING,
 		},
-		TableName: jsii.String("userTable"),
+		TableName:     jsii.String("userTable"),
+		RemovalPolicy: awscdk.RemovalPolicy_DESTROY,
 	})
 
 	// Create a Lambda function that will be called by the API Gateway
